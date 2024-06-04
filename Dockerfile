@@ -1,9 +1,10 @@
 FROM ubuntu:latest
 
-RUN apt update && sudo apt upgrade -y
-RUN apt install python3.10
-RUN apt install python3-pip
-RUN apt install git
+RUN sudo apt-get update 
+RUN sudo apt-get upgrade -y
+RUN apt-get install python3.10
+RUN apt-get install python3-pip
+RUN apt-get install git
 #     python3.10 \
 #     python3-pip \
 #     git
