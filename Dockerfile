@@ -11,4 +11,4 @@ COPY entrypoint.sh /entrypoint.sh
 
 WORKDIR /
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["ls -l", "pwd", "/entrypoint.sh"]
