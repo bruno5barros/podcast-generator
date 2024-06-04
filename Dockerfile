@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get upgrade -y
 
 # Install Python 3.x and Pip
-RUN apt-get install -y python3 python3-pip
+RUN apt-get install -y python3.10 python3-pip
 
 # Install PyYAML
 RUN python3 --version
