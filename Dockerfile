@@ -6,7 +6,9 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y python3 python3-pip
 
 # Install PyYAML
-RUN apt-get install -y python3-pyyaml
+RUN pip
+RUN pip3
+RUN pip3 install PyYAML
 
 # Install Git
 RUN apt-get install -y git
