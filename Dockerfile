@@ -1,6 +1,6 @@
 FROM python:3.10-alpine
 
-RUN apt-get update && apt-get install -y 
+RUN apt-get update 
 #     python3.10 \
 #     python3-pip \
 #     git
