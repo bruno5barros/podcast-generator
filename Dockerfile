@@ -1,27 +1,14 @@
-FROM python:3.10-alpine
+FROM ubuntu:latest
 
-#     python3.10 \
-#     python3-pip \
-# RUN sudo apt-get install git
-RUN apk update
-RUN apk upgrade
-RUN apk search git
-RUN apk add git
+RUN apt-get update && apt-get install -y \
+  python3.10 \
+  python3-pip \
+  git
 
-RUN pip install PyYAML
-
-RUN mkdir /entrypoint
+RUN pip3 install PyYAML
 
 COPY feed.py /usr/bin/feed.py
-COPY entrypoint.sh /entrypoint/entrypoint.sh
-RUN python --version
-RUN python3 --version
 
-WORKDIR /entrypoint/
-RUN chmod -R 777 /entrypoint/entrypoint.sh
-RUN chmod -R 777 /entrypoint/
-RUN ls -l
-RUN pwd
+COPY entrypoint.sh /entrypoint.sh
 
-CMD [ "pwd", "ls -l" ]
-ENTRYPOINT ["/entrypoint/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
