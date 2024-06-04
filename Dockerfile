@@ -10,14 +10,15 @@ RUN apk add git
 
 RUN pip install PyYAML
 
-COPY entrypoint.sh /entrypoint.sh
 COPY feed.py /usr/bin/feed.py
+COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN python --version
 RUN python3 --version
 
 WORKDIR /
-RUN chmod -R 777 entrypoint.sh
+RUN chmod -R 777 /usr/bin/entrypoint.sh
+RUN chmod -R 777 /usr/bin/
 RUN ls -l
 RUN pwd
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
