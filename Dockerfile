@@ -10,6 +10,7 @@ COPY feed.py /usr/bin/feed.py
 COPY entrypoint.sh /entrypoint.sh
 
 WORKDIR /
+RUN chmod -R 775 entrypoint.sh
 RUN ls -l
 RUN pwd
 
