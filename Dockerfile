@@ -2,11 +2,11 @@ FROM python:3.10-alpine
 
 #     python3.10 \
 #     python3-pip \
+# RUN sudo apt-get install git
 RUN apk update
 RUN apk upgrade
 RUN apk search git
 RUN apk add git
-RUN sudo apt-get install git
 
 RUN pip install PyYAML
 
