@@ -8,7 +8,8 @@ RUN pip install PyYAML
 
 COPY feed.py /usr/bin/feed.py
 COPY entrypoint.sh /entrypoint.sh
-RUN python /usr/bin/feed.py
+RUN python --version
+RUN python3 --version
 
 WORKDIR /
 RUN chmod -R 775 entrypoint.sh
