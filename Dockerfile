@@ -15,7 +15,7 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN python --version
 RUN python3 --version
 
-WORKDIR /
+WORKDIR /usr/bin/
 RUN chmod -R 777 /usr/bin/entrypoint.sh
 RUN chmod -R 777 /usr/bin/
 RUN ls -l
