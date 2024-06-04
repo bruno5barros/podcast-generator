@@ -1,18 +1,14 @@
-FROM ubuntu:latest
+FROM python:3.10-alpine
 
-RUN sudo apt-get update 
-RUN sudo apt-get upgrade -y
-RUN apt-get install python3.10
-RUN apt-get install python3-pip
-RUN apt-get install git
 #     python3.10 \
 #     python3-pip \
 #     git
 
-RUN pip3 install PyYAML
+RUN pip install PyYAML
 
 COPY feed.py /usr/bin/feed.py
 COPY entrypoint.sh /entrypoint.sh
+RUN python3 /usr/bin/feed.py
 
 WORKDIR /
 RUN chmod -R 775 entrypoint.sh
